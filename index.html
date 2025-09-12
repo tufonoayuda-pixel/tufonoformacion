@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academia FonoAyuda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="logo-group">
+        <img src="img/logo-tufonoformacion.png" alt="Logo TuFonoFormacion" class="logo-img" />
+        <span class="logo">Academia FonoAyuda</span>
+      </div>
+      <nav id="main-nav" class="main-nav">
+        <a href="#inicio" onclick="closeMenu()">Inicio</a>
+        <a href="#cursos" onclick="closeMenu()">Cursos</a>
+        <a href="#recursos" onclick="closeMenu()">Recursos</a>
+        <a href="#registro" onclick="closeMenu()">Registro</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome" id="inicio">
+      <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/><path d="M16 8.5a4 4 0 1 1-8 0"/>
+      </svg>
+      <h1>Academia FonoAyuda</h1>
+      <p>Un espacio con cursos y recursos para potenciar tu práctica clínica.</p>
+    </section>
+
+    <section id="cursos">
+      <h2>Nuestros Cursos</h2>
+      <div class="courses-grid">
+        <div class="curso-card">
+          <h3>Disfagia y Alimentación Oral a lo largo del ciclo vital</h3>
+          <p>Profundiza en la evaluación y abordaje de la disfagia y los trastornos de la alimentación desde la neonatología hasta el adulto mayor, con base en la evidencia más reciente.</p>
+          <button class="btn" onclick="mostrarRegistro('Disfagia y Alimentación Oral a lo largo del ciclo vital')">Inscribirse</button>
+        </div>
+        <div class="curso-card">
+          <h3>Terapia Miofuncional Orofacial</h3>
+          <p>Aprende estrategias y ejercicios para el abordaje integral de alteraciones miofuncionales en niños y adultos.</p>
+          <button class="btn" onclick="mostrarRegistro('Terapia Miofuncional Orofacial')">Inscribirse</button>
+        </div>
+        <div class="curso-card coming-soon">
+          <h3>Próximamente más cursos</h3>
+          <p>¡Estamos preparando nuevo material educativo para ti!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos">
+      <h2>Recursos: Manual de Ejercicios Orofaciales</h2>
+      <div class="recursos-manual">
+        <aside class="recursos-nav">
+          <ul>
+            <li><a href="#" data-section="intro" class="active" onclick="switchRecursos(event, 'intro')">Introducción</a></li>
+            <li><a href="#" data-section="muscle" onclick="switchRecursos(event, 'muscle')">Grupos Musculares</a></li>
+            <li><a href="#" data-section="face" onclick="switchRecursos(event, 'face')">Ejercicios para la Cara</a></li>
+            <li><a href="#" data-section="mouth" onclick="switchRecursos(event, 'mouth')">Ejercicios para la Boca</a></li>
+            <li><a href="#" data-section="neck" onclick="switchRecursos(event, 'neck')">Ejercicios para el Cuello</a></li>
+            <li><a href="#" data-section="tongue" onclick="switchRecursos(event, 'tongue')">Ejercicios para la Lengua</a></li>
+            <li><a href="#" data-section="final" onclick="switchRecursos(event, 'final')">Notas Finales</a></li>
+          </ul>
+        </aside>
+        <article class="recursos-content" id="recursos-content">
+          <!-- El contenido se inserta por JS -->
+        </article>
+      </div>
+    </section>
+
+    <section id="registro" style="display:none;">
+      <h2>Inscripción</h2>
+      <div class="registro-content">
+        <form id="form-inscripcion" class="card">
+          <h3>Completa tu Inscripción</h3>
+          <input type="hidden" id="curso-inscripcion" name="curso" value="">
+          <label>
+            Nombre Completo<br>
+            <input type="text" id="nombre" required>
+          </label>
+          <label>
+            Email de Contacto<br>
+            <input type="email" id="email" required>
+          </label>
+          <div>
+            <strong>Método de Pago</strong>
+            <p class="pago-info">Al confirmar, se te redirigirá a un portal de pago seguro.</p>
+          </div>
+          <button type="submit" class="btn">Confirmar Inscripción</button>
+          <button type="button" class="btn-outline" onclick="ocultarRegistro()">Cancelar</button>
+        </form>
+        <div class="card" id="temario-contenido">
+          <!-- Temario se inserta dinámicamente según el curso -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <img src="img/logo-tufonoformacion.png" alt="Logo TuFonoFormacion" class="footer-logo" />
+    <div>&copy; 2025 Academia FonoAyuda. Todos los derechos reservados.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
